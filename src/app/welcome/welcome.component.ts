@@ -28,8 +28,16 @@ export class WelcomeComponent implements OnInit {
       response => this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
     );
+  }
 
+  getWelcomeMessageWithParameter(){
+    //console.log("get welcome messsage");
+    //console.log(this.service.executeHelloWorldBeanServiceWithPathVariable(this.name));
 
+    this.service.executeHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
   }
 
   handleSuccessfulResponse(response){
@@ -39,9 +47,9 @@ export class WelcomeComponent implements OnInit {
   }
 
   handleErrorResponse(error) {
-    console.log(error);
-    console.log(error.error);
-    console.log(error.error.message);
+    //console.log(error);
+    //console.log(error.error);
+    //console.log(error.error.message);
     this.welcomeMessageFromService = error.error.message;
   }
 

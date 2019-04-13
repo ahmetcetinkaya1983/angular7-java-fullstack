@@ -19,4 +19,11 @@ export class WelcomeDataService {
     console.log("Execute Hello World Bean Service");
 
   }
+
+  executeHelloWorldBeanServiceWithPathVariable(name) {
+
+    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/${name}`);
+    console.log("Execute Hello World Bean Service");
+
+  }
 }
