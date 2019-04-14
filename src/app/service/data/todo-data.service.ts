@@ -21,6 +21,9 @@ export class TodoDataService {
     return this.http.put(`http://localhost:8080/users/${username}/todos/${id}`, todo);
   }
 
+  createTodo(username, todo) {
+    return this.http.pupostt(`http://localhost:8080/users/${username}/todos`, todo);
+  }
   deleteTodo(username, id) {
     return this.http.delete(`http://localhost:8080/users/${username}/todos/${id}`);
   }
